@@ -36,7 +36,7 @@ The ugly display line in the middle is a side effect of embedding dX inside a dX
 
 You can also just apply dX to a part of a verb that interests you
 
-   (([: +: [ +/ %)dX~ #) 1 2 3
+    (([: +: [ +/ %)dX~ #) 1 2 3
         (3) (%) 1 2 3
     3 1.5 1
         (3) ([) 1 2 3
@@ -52,11 +52,11 @@ placing dX ahead of other adverbs means getting the whole train (must be at leas
 
 consider,
 
-combT =: ([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0),~ (< i.0 0) $~ -~)
+     combT =: ([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0),~ (< i.0 0) $~ -~)
 
 to tunnel inside this verb, apply f. to it.  combT lists the ways x items can be selected from y.
 
-   2 combT f. dX 4
+    2 combT f. dX 4
         (2) (-~) 4
     2
         (2) ((<i.0 0) $~ -~) 4
@@ -124,11 +124,12 @@ This display skips over an interesting long line in the middle, but in J's conso
     └───┴───┴───┘
     
 here is a function that all I remember has something to do with repeated combinations/permutations
+
     
-    cmbcombT =: ({~ [: /:"1 [: ; [: ([:,/  [,"1"1 _1 ]{"1"_ 1 [-.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@combT f."0 +/\)  [: |. #/.~) 
+      cmbcombT =: ({~ [: /:"1 [: ; [: ([:,/  [,"1"1 _1 ]{"1"_ 1 [-.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@combT f."0 +/\)  [: |. #/.~) 
     
-    cmbcombT f.dX 2 2 3 
-        ([: /:"1 [: ; [: ([: ,/ [ ,"1"1 _1 ] {"1"_ 1 [ -.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0) ,~ (<i.0 0) $~ -~)"0 +/\) [: |. #/.~) 2 2 3
+      cmbcombT f.dX 2 2 3 
+         ([: /:"1 [: ; [: ([: ,/ [ ,"1"1 _1 ] {"1"_ 1 [ -.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0) ,~ (<i.0 0) $~ -~)"0 +/\) [: |. #/.~) 2 2 3
     0 1 2
     0 2 1
     2 0 1
@@ -146,7 +147,7 @@ The short result tells us that this is a hook, and also tells us that it could b
 
 But we didn't get an explanation of the meat of the verb yet.  We can just grab one of (first) the previous display lines and insert dX into it.  Why not see what happens when parameters are changed to 2 2 3 3
 
- ([: /:"1 [: ; [: ([: ,/ [ ,"1"1 _1 ] {"1"_ 1 [ -.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0) ,~ (<i.0 0) $~ -~)"0 +/\) [: |. #/.~)dX 2 2 3 3
+       ([: /:"1 [: ; [: ([: ,/ [ ,"1"1 _1 ] {"1"_ 1 [ -.~"1 i.@(+&({:@$)))L:0/ [: |.@:(] <@([: ; ([ ; [: i.@>: -~) ((1 {:: [) ,.&.> [: ,&.>/\. >:&.>@:])^:(0 {:: [) (<i.1 0) ,~ (<i.0 0) $~ -~)"0 +/\) [: |. #/.~)dX 2 2 3 3
         (#/.~) 2 2 3 3
     2 2
         ([:) 2 2 3 3
