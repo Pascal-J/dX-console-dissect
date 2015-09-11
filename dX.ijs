@@ -3,6 +3,8 @@ lrA_z_ =: 1 : '5!:5 < ''u'''
 eval_z_ =: 1 : ' a: 1 :  m'
 lr_z_ =: 3 : '5!:5 < ''y'''
 pDr_z_ =: pD@:('    ' , ":)"1@:":
+
+
 coclass 'dX'
 lrX =: 1 : ('''('', u lrA , '') '' , lr y';':';'''('', (lr x) , '') ('' , u lrA , '') '' , lr y')
 evaly =: 3 : 'y eval lrA'  NB. removes 1 level of parens from lrT boxes
@@ -45,7 +47,7 @@ evaleach =: 1 : ('(3 : (''for_i. ('', m lrA , '') do. pDr^:(i_index < <:#('',m l
 
 
 
-strandT =: ([: ,&' AmbiD'@:('()'&strbracket)@:evaly@:; L:1  [: >@{.L:1 [: (#~ (<1) ~: (0-:1&{::)L:1)  trainorder@:(<"_1)) 'lrT lvProcsRestT evaleach' aatrain
+strandT =: ([: ,&' AmbiD_dX_'@:('()'&strbracket_dX_)@:evaly_dX_@:; L:1  [: >@{.L:1 [: (#~ (<1) ~: (0-:1&{::)L:1)  trainorder@:(<"_1)) 'lrT lvProcsRestT evaleach' aatrain
 
 dX =: lrA  1  : '(''9: '', m , '' strandT'') eval'
 
